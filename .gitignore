@@ -1,0 +1,14 @@
+# Ignorar el entorno virtual
+chatbot-env/
+
+# Ignorar archivos de caché de Python
+__pycache__/
+
+# Ignorar archivos de configuración del entorno
+.env
+
+# Ignorar archivos de registro
+*.log
+
+# Ignorar archivos temporales de sistema
+.DS_Store

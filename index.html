@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Chatbot</title>
+	</head>
+	<body>
+		<h1>Chatbot Médico</h1>
+		<div>
+			<textarea id="userInput" placeholder="Escribe tu pregunta..."></textarea>
+			<button onclick="sendMessage()">Enviar</button>
+		</div>
+		<div id="chatbox"></div>
+		
+		<script>
+			async function sendMessage() {
+				const userInput = document.getElementById("userInput").value;
+				const response = await fetch("http://127.0.0.1:5000/chat", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({ message: userInput }),
+				});
+				const data = await response.json();
+				const chatbox = document.getElementById("chatbox");
+				chatbox.innerHTML += `<p><strong>Usuario:</strong> ${userInput}</p>`;
+				chatbox.innerHTML += `<p><strong>Chatbot:</strong> ${data.response}</p>`;
+			}
+		</script>
+	</body>
+</html>
+
+
