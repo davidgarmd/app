@@ -59,7 +59,7 @@ def chat():
         response = openai.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": "Eres un asistente médico experto en cirugía vascular."},
+                {"role": "system", "content": "Eres un asistente médico experto en cirugía vascular, se te encarga recomendar respuestas en patología venosa, en caso de que debas recomendar la visita a un especialista recomienda la valoración por un cirujano vascular."},
                 {"role": "user", "content": user_input},
             ],
             temperature=0.7,  # Controla la creatividad
