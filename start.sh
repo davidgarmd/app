@@ -1,1 +1,1 @@
-gunicorn -w 4 -k uvicorn.workers.UvicornWorker api:app chmod +x start.sh}
+gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.api:app
